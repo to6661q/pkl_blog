@@ -1,15 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -19,8 +15,6 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -29,8 +23,6 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -59,12 +51,10 @@ class UserController extends Controller
             'password' => $password
             ]);
 
-        return redirect()->back()->with('success','Data user berhasil ditambahkan');
+        return redirect()->back()->with('success','Data admin berhasil ditambahkan');
     }
 
     /**
-     * Display the specified resource.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -74,8 +64,6 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -86,8 +74,6 @@ class UserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -118,12 +104,10 @@ class UserController extends Controller
 
         $user = User::find($id);
         $user -> update($user_data);
-        return redirect()->route('user.index')->with('success', 'Data user berhasil diedit');
+        return redirect()->route('user.index')->with('success', 'Data admin berhasil diedit');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -132,6 +116,6 @@ class UserController extends Controller
         $user = User::find($id);
         $user -> delete();
 
-        return redirect()->back()->with('success', 'Data user berhasil dihapus');
+        return redirect()->back()->with('success', 'Data admin berhasil dihapus');
     }
 }

@@ -1,13 +1,11 @@
 @extends('template_backend.home')
-@section('sub-judul','Kategori')
+@section('sub-judul','Daftar Kategori Berita')
 @section('content')
-
 @if(Session::has('success'))
     <div class="alert alert-success" role="alert">
     {{ Session('success')}}
     </div>
 @endif
-
     <a href="{{ route('category.create')}}" class="btn btn-primary btn-sm">Tambah Kategori</a>
     <br>
     <br>
@@ -15,27 +13,24 @@
         <thead>
             <th>No</th>
             <th>Nama Kategori</th>
-            <th>Action</th>
+            <th>Pilihan</th>
         </thead>
         <tbody>
             @foreach ($category as $result =>$hasil)
             <tr>
                 <td>{{ $result + $category -> firstitem()}}</td>
-                <td>{{ $hasil->name }}</td>
+                <td>{{ $hasil->namec }}</td>
                 <td>
-                    
                     <form action="{{ route('category.destroy', $hasil->id) }}" method="POST">
                         @csrf
                         @method('delete')
                         <a href="{{ route('category.edit', $hasil->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                     </form>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
-
     {{ $category->links() }}
-
 @endsection

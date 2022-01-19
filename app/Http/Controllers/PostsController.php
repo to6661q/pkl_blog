@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Models\Posts;
 use App\Models\Tags;
@@ -7,11 +6,10 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Auth;
+
 class PostsController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -21,8 +19,6 @@ class PostsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -34,8 +30,6 @@ class PostsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -62,12 +56,10 @@ class PostsController extends Controller
 
         $posts -> tags() -> attach($request->tags);
         $gambar-> move('public/uploads/posts/', $new_gambar);
-        return redirect()->back()->with('success','Data postingan berhasil ditambahkan');
+        return redirect()->back()->with('success','Data berita berhasil ditambahkan');
     }
 
     /**
-     * Display the specified resource.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -77,8 +69,6 @@ class PostsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -92,8 +82,6 @@ class PostsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -131,17 +119,13 @@ class PostsController extends Controller
             ];
         }
 
-
-
         $posts->tags()->sync($request->tags);
         $posts->update($posts_data);
         
-        return redirect()->route('posts.index')->with('success', 'Data Post berhasil diedit');
+        return redirect()->route('posts.index')->with('success', 'Data berita berhasil diedit');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -149,7 +133,7 @@ class PostsController extends Controller
     {
         $posts = Posts::findorfail($id);
         $posts ->delete();
-        return redirect()->back()->with('success', 'Data Post berhasil dihapus');
+        return redirect()->back()->with('success', 'Data berita berhasil dihapus');
     }
 
     public function tampil_hapus()
@@ -163,7 +147,7 @@ class PostsController extends Controller
         $posts = Posts::withTrashed()->where('id', $id) -> first();
         $posts ->restore();
         
-        return redirect()->back()->with('success', 'Data Post berhasil direstore');
+        return redirect()->back()->with('success', 'Data berita berhasil direstore');
     }
 
     public function kill($id)
@@ -171,6 +155,6 @@ class PostsController extends Controller
         $posts = Posts::withTrashed()->where('id', $id) -> first();
         $posts ->forceDelete();
         
-        return redirect()->back()->with('success', 'Data Post Recycle berhasil dihapus permanen');
+        return redirect()->back()->with('success', 'Data recycle berita berhasil dihapus permanen');
     }
 }

@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Profilposts;
 use App\Models\Profilcategory;
 use Illuminate\Http\Request;
@@ -54,15 +56,6 @@ class ProfilpostsController extends Controller
 
         $profilgambar-> move('public/uploads/profilposts/', $profilnew_gambar);
         return redirect()->back()->with('success','Data postingan profil berhasil ditambahkan');
-    }
-
-    /**
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -152,4 +145,5 @@ class ProfilpostsController extends Controller
         
         return redirect()->back()->with('success', 'Data recycle postingan profil berhasil dihapus permanen');
     }
+    
 }

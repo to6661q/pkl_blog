@@ -1,11 +1,13 @@
 @extends('template_backend.home')
 @section('sub-judul','Recycle Berita')
 @section('content')
+
 @if(Session::has('success'))
     <div class="alert alert-success" role="alert">
     {{ Session('success')}}
     </div>
 @endif
+
     <table class="table table-striped table-hover table-sm table-bordered">
         <thead>
             <th>No</th>
@@ -15,6 +17,7 @@
             <th>Thumbnail</th>
             <th>Pilihan</th>
         </thead>
+
         <tbody>
             @foreach ($posts as $result =>$hasil)
             <tr>
@@ -27,19 +30,24 @@
                     </ul>
                     @endforeach
                 </td>
-                <td><img src="{{ asset($hasil->gambar) }}" 
-        class="img-fluid" style="width:100px" ></td>
+                <td><img src="{{ asset($hasil->gambar) }}" class="img-fluid" style="width:100px" ></td>
                 <td>
                     <form action="{{ route('posts.kill', $hasil->id) }}" method="POST">
+
                         @csrf
                         @method('delete')
-                        <a href="{{ route('posts.restore', $hasil->id) }}" class="btn btn-info btn-sm">Restore</a>
+                        <a href="{{ route('posts.restore', $hasil->id) }}" class="btn btn-info btn-sm" style="background-color:#134281">Restore</a>
                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+
                     </form>
                 </td>
             </tr>
+
             @endforeach
+
         </tbody>
     </table>
+
     {{ $posts->links() }}
+    
 @endsection

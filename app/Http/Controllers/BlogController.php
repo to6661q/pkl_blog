@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Posts;
 use App\Models\Category;
@@ -25,10 +27,22 @@ class BlogController extends Controller
         return view('blog.isi_posts', compact('data', 'category_widget'));
     }
 
+    public function isi_pengaduanblog(){
+        $category_widget = Category::all();
+        $data = Posts::latest()->paginate(6);
+        return view('blog.isi_pengaduanposts', compact('data', 'category_widget'));
+    }
+
     public function list_profilblog(){
         $category_widget = Profilcategory::all();
         $profildata = Profilposts::latest()->paginate(6);
         return view('blog.list_profilposts', compact('profildata', 'category_widget'));
+    }
+
+    public function list_galeriblog(){
+        $category_widget = Category::all();
+        $data = Posts::latest()->paginate(6);
+        return view('blog.list_galeriposts', compact('data', 'category_widget'));
     }
 
     public function list_blog(){
@@ -54,4 +68,5 @@ class BlogController extends Controller
         $data = Posts::where('judul', $request->cari)->orWhere('judul', 'like', '%'.$request->cari.'%')->paginate(6);
         return view('blog.list_posts', compact('data', 'category_widget'));
     }
+
 }

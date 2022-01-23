@@ -1,81 +1,84 @@
-<footer id="footer" style="background-color:#00ccff">
+<footer id="footer" style="background-color:#00ccff" >
 		<div class="container">
-			<!-- row -->
 			<div class="row">
+
 				<div class="col-md-3">
-					<div class="footer-widget">
-						<h3 class="footer-title" style="color:black">Ikuti Kami</h3>
+					<div class="footer-widget" >
+						<h3 class="footer-title" style="color:black">Ikuti :</h3>
+						<br>
 						<ul class="contact-social">
-							<li><a href="#" class="social-facebook"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#" class="social-twitter"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#" class="social-google-plus"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#" class="social-instagram"><i class="fa fa-instagram"></i></a></li>
+							<li><a href="https://web.facebook.com/" class="social-facebook"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://twitter.com/" class="social-twitter"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="https://youtube.com" class="social-google-plus"><i class="fa fa-youtube"></i></a></li>
+							<li><a href="https://instagram.com" class="social-instagram"><i class="fa fa-instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<h3 class="footer-title" style="color:black">Categories</h3>
-						<div class="category-widget">
-							<ul>
-								@fach
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3" >
-					<div class="footer-widget">
-						<h3 class="footer-title" style="color:black">Tags</h3>
-						<div class="tags-widget">
-							<ul>
-								<li><a href="#">Social</a></li>
-								<li><a href="#">Lifestyle</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Travel</a></li>
-								<li><a href="#">Technology</a></li>
-								<li><a href="#">Fashion</a></li>
-								<li><a href="#">Life</a></li>
-								<li><a href="#">News</a></li>
-								<li><a href="#">Magazine</a></li>
-								<li><a href="#">Food</a></li>
-								<li><a href="#">Health</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-				sdvvvvvvvvvvvv
-				</div>
-				
-				
-			</div>
-			<!-- /row -->
 
-			<!-- row -->
-			<div class="footer-bottom row">
-				<div class="col-md-6 col-md-push-6">
-					<ul class="footer-nav">
-					</ul>
-				</div>
-				<div class="col-md-6 col-md-pull-6">
-					<div class="footer-copyright" style="color:black">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Designed By <i class="fa fa-heart-o" aria-hidden="true"></i><a href="https://colorlib.com" target="_blank"> Ciputat Pride</a>
+				<div class="col-md-3">
+					<div class="footer-widget">
+						<h3 class="footer-title" style="color:black">Hubungi :</h3>
+						<br>
+						<div class="widget">
+							<ul >
+								<li><i class="fa fa-phone" style="color:#134281" ></i></li>
+								<li><a href=""style="color:#134281" >123-4567-89</a></li>
+								<br>
+								<li><i class="fa fa-envelope" style="color:#134281" ></i></li>
+								<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=new"style="color:#134281" >adminbojonegara@serangkab.com</a></li>
+								<br>
+								<li><i class="fa fa-map-marker" style="color:#134281"></i></li>
+								<li><a href="https://goo.gl/maps/FKs6R5rboTjMy9Ze8" style="color:#134281" >Jl. Raya Bojonegara No.Desa, Bojonegara, Cilegon, Kabupaten Serang, Banten 42455 </a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
+
+
+				<div class="col-md-3">
+					<div class="footer-widget">
+						<h3 class="footer-title" style="color:black">Menu :</h3>
+						<br>
+						<div class="widget">
+							<ul class="menu" style="text-align:left;">
+								<li><i class="fa fa-home" style="color:#134281" ></i>
+									<a href="{{ url('') }}" style="color:#134281">&ensp;Beranda</a></li>
+								<li><i class="fa fa-user-circle" style="color:#134281" ></i>
+									<a href="{{ route('profilblog.list') }}" style="color:#134281">&ensp;Profil</a></li>	
+								<li><i class="fa fa-paste" style="color:#134281" ></i>
+									<a href="{{ route('blog.list') }} " style="color:#134281">&ensp;Berita</a></li>	
+								<li><i class="fa fa-image" style="color:#134281" ></i>
+									<a href="{{ route('galeriblog.list') }}" style="color:#134281">&ensp;Galeri</a></li>
+								<li><i class="fa fa-file" style="color:#134281" ></i>
+									<a href="{{ route('dokumen.tampil_dokumen') }}" style="color:#134281">&ensp;Dokumen</a></li>
+								<li><i class="fa fa-exclamation-circle" style="color:#134281" ></i>
+									<a href="{{ route('pengaduanblog.isi') }}" style="color:#134281">&ensp;Pengaduan</a></li>	
+
+							</ul>
+							
+						</div>
+						
+					</div>
+				</div>
+	
 			</div>
-			<!-- /row -->
+			<div class="footer-bottom row">	
+				<div class="footer-copyright">
+					<a href="" style="color:black">Copyright &copy;
+						<script >document.write(new Date().getFullYear());</script>
+							<a href="" style="color:black"> Dinas Komunikasi, Informatika, Persandian dan Statistik - Kecamatan Bojonegara Kabupaten Serang</a> 
+					</a>
+				</div>
+			</div>
+
 		</div>
-</body>		<!-- /container -->
-	</footer>
-	<!-- /FOOTER -->
+	</body>	
 
-	<!-- jQuery Plugins -->
+	</footer>
+
 	<script src="{{ asset('public/frontend/js/jquery.min.js') }}"></script>
 	<script src="{{ asset('public/frontend/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('public/frontend/js/jquery.stellar.min.js') }}"></script>
 	<script src="{{ asset('public/frontend/js/main.js') }}"></script>
-
-
 
 </html>

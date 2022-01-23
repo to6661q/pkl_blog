@@ -28,15 +28,10 @@
 </div>
 
 	
-</div>
+	</div>
+
 @endforeach
+
 </div>
+
 @endsection
-
-
-
-
-
-
-
-

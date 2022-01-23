@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Tags;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -37,16 +39,7 @@ class TagsController extends Controller
             'name' => $request->name,
             'slug' => Str::slug($request->name)
         ]);
-        return redirect()->back()->with('success','Data tags berita berhasil ditambahkan');
-    }
-
-    /**
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->back()->with('success','Data tags postingan berita berhasil ditambahkan');
     }
 
     /**
@@ -76,7 +69,7 @@ class TagsController extends Controller
         ];
 
         Tags::whereId($id)->update($tags_data);
-        return redirect()->route('tags.index')->with('success', 'Data tags berita berhasil diedit');
+        return redirect()->route('tags.index')->with('success', 'Data tags postingan berita berhasil diedit');
     }
 
     /**
@@ -88,6 +81,7 @@ class TagsController extends Controller
         $tags = Tags::findorfail($id);
         $tags -> delete();
 
-        return redirect()->back()->with('success', 'Data tags berita berhasil dihapus');
+        return redirect()->back()->with('success', 'Data tags postingan berita berhasil dihapus');
     }
+    
 }

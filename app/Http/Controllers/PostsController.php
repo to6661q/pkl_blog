@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Posts;
 use App\Models\Tags;
 use App\Models\Category;
@@ -56,16 +58,8 @@ class PostsController extends Controller
 
         $posts -> tags() -> attach($request->tags);
         $gambar-> move('public/uploads/posts/', $new_gambar);
-        return redirect()->back()->with('success','Data berita berhasil ditambahkan');
-    }
-
-    /**
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->back()->with('success','Data postingan berita berhasil ditambahkan');
+        
     }
 
     /**
@@ -122,7 +116,7 @@ class PostsController extends Controller
         $posts->tags()->sync($request->tags);
         $posts->update($posts_data);
         
-        return redirect()->route('posts.index')->with('success', 'Data berita berhasil diedit');
+        return redirect()->route('posts.index')->with('success', 'Data postingan berita berhasil diedit');
     }
 
     /**
@@ -133,7 +127,7 @@ class PostsController extends Controller
     {
         $posts = Posts::findorfail($id);
         $posts ->delete();
-        return redirect()->back()->with('success', 'Data berita berhasil dihapus');
+        return redirect()->back()->with('success', 'Data postingan berita berhasil dihapus');
     }
 
     public function tampil_hapus()
@@ -147,7 +141,7 @@ class PostsController extends Controller
         $posts = Posts::withTrashed()->where('id', $id) -> first();
         $posts ->restore();
         
-        return redirect()->back()->with('success', 'Data berita berhasil direstore');
+        return redirect()->back()->with('success', 'Data postingan berita berhasil direstore');
     }
 
     public function kill($id)
@@ -155,6 +149,7 @@ class PostsController extends Controller
         $posts = Posts::withTrashed()->where('id', $id) -> first();
         $posts ->forceDelete();
         
-        return redirect()->back()->with('success', 'Data recycle berita berhasil dihapus permanen');
+        return redirect()->back()->with('success', 'Data recycle postingan berita berhasil dihapus permanen');
     }
+
 }

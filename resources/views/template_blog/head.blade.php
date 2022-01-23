@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,11 +45,8 @@
 </head>
 
 <body>
-	<!-- HEADER -->
 
-	<header id="header">
-		<!-- NAV -->
-	
+	<header id="header">	
 		<div id="nav">
 			<div id="nav-bottom" style="background-color:#00ccff">
 				<div class="container">
@@ -58,11 +54,10 @@
 						<img src="{{ asset('public/frontend/img/Logo_kabupaten_serang.png') }}" alt="" weight="42px" height="53px">	
 							<li><a href="{{ url('') }}">Beranda</a></li>
 							<li><a href="{{ route('profilblog.list') }}">Profil</a></li>	
-							<li class="has-dropdown">
-									<a href="{{ route('blog.list') }}">Berita</a></li>	
-							<li><a href="#">Agenda Kegiatan</a></li>
-							<li><a href="../pengaduan.php">Pengaduan</a></li>
-							<li><a href="#">Visi Misi</a></li>
+							<li><a href="{{ route('blog.list') }}">Berita</a></li>	
+							<li><a href="{{ route('galeriblog.list') }}">Galeri</a></li>
+							<li><a href="{{ route('dokumen.tampil_dokumen') }}">Dokumen</a></li>
+							<li><a href="{{ route('pengaduanblog.isi') }}">Pengaduan</a></li>
 							<li><a href=""><button class="search-btn" ><i class="fa fa-search" ></i></button>
 								<div id="nav-search">
 									<form action="{{ route( 'blog.cari')}}">
@@ -74,7 +69,11 @@
 								</a>
 							</li>		
 					</ul>
+					
 				</div>
+				<div class="text-center"style="text-align:center;">
+			<img  src="{{ asset('public/frontend/img/fix-header-bojonegara-2.png') }}" alt="" height="10">
+			</div>
 			</div>
 			<div class="text-center">
 			<img  src="{{ asset('public/frontend/img/kecamatan-bojonegara_1619666865.jpg') }}" alt="" height="500">

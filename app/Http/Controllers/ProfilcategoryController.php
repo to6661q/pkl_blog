@@ -1,8 +1,11 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Profilcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+
 class ProfilcategoryController extends Controller
 {
     /**
@@ -36,16 +39,7 @@ class ProfilcategoryController extends Controller
             'profilnamec' => $request->profilnamec,
             'slug' => Str::slug($request->profilnamec)
         ]);
-        return redirect()->back()->with('success','Data kategori postingan berita berhasil ditambahkan');
-    }
-
-    /**
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->back()->with('success','Data kategori postingan profil berhasil ditambahkan');
     }
 
     /**
@@ -76,7 +70,7 @@ class ProfilcategoryController extends Controller
         ];
 
         Profilcategory::whereId($id)->update($profilcategory_data);
-        return redirect()->route('profilcategory.index')->with('success', 'Data kategori postingan berita berhasil diedit');
+        return redirect()->route('profilcategory.index')->with('success', 'Data kategori postingan profil berhasil diedit');
     }
 
     /**
@@ -88,6 +82,7 @@ class ProfilcategoryController extends Controller
         $profilcategory = Profilcategory::findorfail($id);
         $profilcategory -> delete();
 
-        return redirect()->back()->with('success', 'Data kategori postingan berita berhasil dihapus');
+        return redirect()->back()->with('success', 'Data kategori postingan profil berhasil dihapus');
     }
+    
 }

@@ -9,7 +9,7 @@
 		<div class="post post-sm">
 			<div class="post-body" style="text-align:center;">
 				<div class="post-category">
-							<a href="{{ route('profilblog.isi', $post_terbaru-> slug) }}">{{ $post_terbaru->profilcategory->profilnamec}}</a>
+							<h4 href="{{ route('profilblog.isi', $post_terbaru-> slug) }}">{{ $post_terbaru->profilcategory->profilnamec}}</h4>
 						</div>
 						
 					</div>

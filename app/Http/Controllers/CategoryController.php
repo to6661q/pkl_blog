@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -37,16 +39,7 @@ class CategoryController extends Controller
             'namec' => $request->namec,
             'slug' => Str::slug($request->namec)
         ]);
-        return redirect()->back()->with('success','Data kategori berita berhasil ditambahkan');
-    }
-
-    /**
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->back()->with('success','Data kategori postingan berita berhasil ditambahkan');
     }
 
     /**
@@ -89,6 +82,7 @@ class CategoryController extends Controller
         $category = Category::findorfail($id);
         $category -> delete();
 
-        return redirect()->back()->with('success', 'Data kategori berita berhasil dihapus');
+        return redirect()->back()->with('success', 'Data kategori postingan berita berhasil dihapus');
     }
+
 }
